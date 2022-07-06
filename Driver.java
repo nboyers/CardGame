@@ -108,7 +108,7 @@ public class Driver {
 
             if (nextCard == currentCard){
                 System.out.println("The value is the same as the previous card.");
-                System.out.println("You lose on ties.  Sorry!");
+                System.out.println("You lose on ties. Sorry!");
                 break;  // End the game.
             }
             else if (nextCard.isHigherThan(currentCard)) {

@@ -15,7 +15,7 @@ public class Deck {
      * An array of 52 or 54 cards.  A 54-card deck contains two Jokers,
      * in addition to the 52 cards of a regular poker deck.
      */
-    private Card[] deck;
+    private final Card[] deck;
 
     /**
      * Keeps track of the number of cards that have been dealt from
@@ -29,8 +29,9 @@ public class Deck {
      * randomize the order.  (Note that "new Deck()" is equivalent
      * to "new Deck(false)".)
      */
-    public Deck() {
+    protected Deck() {
         deck = new Card[52];
+        new Card();
         int cardCt = 0; // How many cards have been created so far.
         for (int suit = 1; suit <= 4; suit++) {
             for (int value = 1; value <= 13; value++) {
@@ -45,7 +46,7 @@ public class Deck {
      * Put all the used cards back into the deck (if any), and
      * shuffle the deck into a random order.
      */
-    public void shuffle() {
+    protected void shuffle() {
         for ( int i = deck.length-1; i > 0; i-- ) {
             int rand = (int)(Math.random()*(i+1));
             Card temp = deck[i];
@@ -63,7 +64,7 @@ public class Deck {
      * @return the card which is removed from the deck.
      * @throws IllegalStateException if there are no cards left in the deck
      */
-    public Card dealCard() {
+    protected Card dealCard() {
         if (cardsUsed == deck.length) {
             throw new IllegalStateException("No cards are left in the deck.");
         }

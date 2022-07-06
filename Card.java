@@ -25,7 +25,8 @@ public class Card {
 
     private final static int NUM_FACES = 13;
     private final static int NUM_SUITS = 4;
-    private int face, suit;
+    private final int face;
+    private final int suit;
     private String faceName, suitName;
 
     //-----------------------------------------------------------------
@@ -140,7 +141,7 @@ public class Card {
     //  both face and suit.
     //-----------------------------------------------------------------
     public String toString() {
-        return faceName + " of " + suitName;
+        return getFaceName() + " of " + getSuitName();
     }
 }
 
